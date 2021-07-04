@@ -9,7 +9,6 @@ const UpdateDoctorProfile = () => {
     return { doctor: state.doctorProfile.data };
   });
 
-
   let token = localStorage.getItem("token");
 
   const [firstName, setFirstName] = useState(profile.doctor.firstName);
@@ -18,15 +17,18 @@ const UpdateDoctorProfile = () => {
   const [img, setImg] = useState(profile.doctor.img);
   const [price, setPrice] = useState(profile.doctor.price);
   const [email, setEmail] = useState(profile.doctor.email);
-  const [description,setDescription]=useState(profile.doctor.description)
-    
-    const [Qualifications,setQualifications]=useState(profile.doctor.Qualifications)
-    const [practicalExperiences,setPracticalExperiences]=useState(profile.doctor.practicalExperiences)
+  const [description, setDescription] = useState(profile.doctor.description);
+
+  const [Qualifications, setQualifications] = useState(
+    profile.doctor.Qualifications
+  );
+  const [practicalExperiences, setPracticalExperiences] = useState(
+    profile.doctor.practicalExperiences
+  );
   const data = JSON.parse(localStorage.getItem("profile-data"));
   const dispatch = useDispatch();
 
   const editProfile = () => {
-    
     axios
       .put(
         "http://localhost:5000/doctor/details",
@@ -39,8 +41,8 @@ const UpdateDoctorProfile = () => {
           price,
           email,
           description,
-    Qualifications,
-    practicalExperiences,
+          Qualifications,
+          practicalExperiences,
         },
         {
           headers: {
@@ -55,11 +57,10 @@ const UpdateDoctorProfile = () => {
         setImg(profile.doctor.img);
         setPrice(profile.doctor.price);
         setEmail(profile.doctor.email);
-        setDescription(profile.doctor.description)
-        setQualifications(profile.doctor.Qualifications)
-        setPracticalExperiences(profile.doctor.practicalExperiences)
+        setDescription(profile.doctor.description);
+        setQualifications(profile.doctor.Qualifications);
+        setPracticalExperiences(profile.doctor.practicalExperiences);
         dispatch(updateData(result.data));
-      
       })
       .catch((err) => {
         console.log(err);
@@ -69,7 +70,7 @@ const UpdateDoctorProfile = () => {
   return (
     <>
       <div className="profile_page">
-        <h3 >FirstName :</h3>
+        <h3>FirstName :</h3>
         <input
           className="inputs"
           type="text"

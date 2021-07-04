@@ -34,28 +34,6 @@ const getDoctorById = (req, res) => {
 };
 
 const allInfoOfDoctor = (req, res) => {
-  const {
-    FirstName,
-    lastName,
-    age,
-    email,
-    password,
-    description,
-    Qualifications,
-    practicalExperiences,
-    qualificationsFile,
-  } = req.body;
-  const arr = [
-    FirstName,
-    lastName,
-    age,
-    email,
-    password,
-    description,
-    Qualifications,
-    practicalExperiences,
-    qualificationsFile,
-  ];
 
   const { firstName, lastName, age, email,password,description,
     Qualifications,practicalExperiences,qualificationsFile } = req.body;

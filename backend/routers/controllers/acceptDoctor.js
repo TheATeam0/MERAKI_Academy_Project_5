@@ -2,7 +2,6 @@ const db = require("../../db/db");
 const bcrypt = require("bcrypt");
 
 const acceptDoctor = async (req, res) => {
-  console.log("backkkkkk");
   const { password, doctor_id } = req.body;
   let userResult = [{ id: 7 }];
   const arr = [doctor_id];

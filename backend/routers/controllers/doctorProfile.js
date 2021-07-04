@@ -52,15 +52,17 @@ const updateDetailsById = (req, res) => {
     qualificationsFile,
     firstName,
     lastName,
+    price,
     age,
     email,
     img,
   } = req.body;
   const query = `UPDATE doctorsDetails SET
-  description=?, Qualifications=?,practicalExperiences=? WHERE user_id=? `;
-  const data = [description, Qualifications, practicalExperiences, user_id];
+  description=?, Qualifications=?,practicalExperiences=? , price= ? WHERE user_id=? `;
+  const data = [description, Qualifications, practicalExperiences,price, user_id];
 
   db.query(query, data, (err, result) => {
+    console.log(result);
     if (err) res.status(400).send(err);
     const query0 = `UPDATE users SET
     firstName=?, lastName=?,age=?,email=?,img=? WHERE id=? `;
