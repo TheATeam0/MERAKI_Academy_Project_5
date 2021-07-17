@@ -96,15 +96,17 @@ const Video=()=> {
 
 	return (
 		<>
-			<h1 style={{ textAlign: "center", color: '#fff' }}>Zoomish</h1>
+		<div style={{paddingTop:"3%",backgroundColor:"#f1f1f1"}}>
+			<h1 style={{ textAlign: "center", color: '#86cb6a' ,margin:"0",backgroundColor: "#f1f1f1",padding:"0.5%"}}>Video Call</h1>
+			<div className="video-body">
 		<div className="container">
 			<div className="video-container">
 				<div className="video">
-					{stream &&  <video playsInline muted ref={myVideo} autoPlay style={{ width: "300px" }} />}
+					{stream &&  <video playsInline muted ref={myVideo} autoPlay style={{ width: "180px" }} />}
 				</div>
 				<div className="video">
 					{callAccepted && !callEnded ?
-					<video playsInline ref={userVideo} autoPlay style={{ width: "300px"}} />:
+					<video playsInline ref={userVideo} autoPlay style={{ width: "400px"}} />:
 					null}
 				</div>
 			</div>
@@ -117,13 +119,13 @@ const Video=()=> {
 					onChange={(e) => setName(e.target.value)}
 					style={{ marginBottom: "20px" }}
 				/> */}
-				<CopyToClipboard text={me} style={{ marginBottom: "2rem" }}>
+				<CopyToClipboard text={me} style={{ marginBottom: "0.5rem",width:"150px" ,height:"50px",backgroundColor:"#9bdb82" }}>
 					<Button variant="contained" color="primary" startIcon={<AssignmentIcon fontSize="large" />}>
 						Copy ID
 					</Button>
 				</CopyToClipboard>
 
-				<TextField
+				<TextField 
 					id="filled-basic"
 					label="ID to call"
 					variant="filled"
@@ -132,17 +134,17 @@ const Video=()=> {
 				/>
 				<div className="call-button">
 					{callAccepted && !callEnded ? (
-						<Button variant="contained" color="secondary" onClick={leaveCall}>
+						<Button variant="contained" color="secondary"  onClick={leaveCall}>
 							End Call
 						</Button>
 					) : (
-						<IconButton color="primary" aria-label="call" onClick={() => callUser(idToCall)}>
+						<IconButton color="black" aria-label="call" onClick={() => callUser(idToCall)}>
 							<PhoneIcon fontSize="large" />
 						</IconButton>
 					)}
-					{idToCall}
+					
 				</div>
-			</div>
+			</div>     
 			<div>
 				{receivingCall && !callAccepted ? (
 						<div className="caller">
@@ -153,6 +155,8 @@ const Video=()=> {
 					</div>
 				) : null}
 			</div>
+		</div>
+		</div>
 		</div>
 		</>
 	)

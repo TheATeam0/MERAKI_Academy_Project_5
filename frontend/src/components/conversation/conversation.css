@@ -133,9 +133,31 @@
 .conversation-pa {
   /* background-color: rgb(63, 56, 56); */
 }
-.video-img:hover{
-color:yellowgreen;
-}
+
 .info-user svg:hover{
   color:black;
+}  
+.container{
+ 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}  
+  
+.video-body{
+  
+  background-color: #f1f1f1;
+  padding-bottom: 12.4%;
+  margin: 0px auto;
+  
+}   
+.myId{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
 }
