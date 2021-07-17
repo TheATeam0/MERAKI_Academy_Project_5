@@ -10,7 +10,7 @@ socket = io(CONNECTION_PORT);
 
 const Conversation = (props) => {
   const history = useHistory();
-  const { sender, receiver, firstName, lastName, img,setVideo } = props;
+  const { sender, receiver, firstName, lastName, img, setVideo } = props;
 
   const userId = localStorage.getItem("user_id");
   const [result, setResult] = useState([]);
@@ -59,8 +59,7 @@ const Conversation = (props) => {
       .then((result) => {
         setRoom(result.data.conversation.conversation[0].id);
         setResult(result.data.result.result);
-        setVideo(result.data.conversation.conversation[0].id)
-        
+        setVideo(result.data.conversation.conversation[0].id);
       })
       .catch((err) => {
         console.log(err);
@@ -80,7 +79,26 @@ const Conversation = (props) => {
           <p>
             {firstNameUse} {lastNameUse}
           </p>
-          <button onClick={()=>{history.push("/video")}}>video</button>
+
+          <svg className="video-img" style={{marginLeft:"45rem"}}
+            onClick={() => {
+              history.push("/video");
+            }}
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="currentColor"
+            class="bi bi-camera-video"
+            viewBox="0 0 16 16"
+            color="white"
+            cursor="pointer"
+            
+          >
+            <path
+              fill-rule="evenodd"
+              d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5zm11.5 5.175 3.5 1.556V4.269l-3.5 1.556v4.35zM2 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H2z"
+            />
+          </svg>
         </div>
       </div>
       <div className="conversation">

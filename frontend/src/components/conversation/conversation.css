@@ -133,3 +133,9 @@
 .conversation-pa {
   /* background-color: rgb(63, 56, 56); */
 }
+.video-img:hover{
+color:yellowgreen;
+}
+.info-user svg:hover{
+  color:black;
+}
