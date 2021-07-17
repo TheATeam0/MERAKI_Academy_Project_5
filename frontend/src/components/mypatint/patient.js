@@ -14,7 +14,7 @@ const Patient = () => {
   console.log(typeof date);
   console.log("dsaaaaaaaaaaaaaaaaaaaaaaaaaa", date);
   const { id } = useParams();
-
+          
   const heading = [
     "Name",
     "calories",
