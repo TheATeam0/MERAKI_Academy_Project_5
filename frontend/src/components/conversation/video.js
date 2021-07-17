@@ -97,12 +97,12 @@ const Video=()=> {
 	return (
 		<>
 		<div style={{paddingTop:"3%",backgroundColor:"#f1f1f1"}}>
-			<h1 style={{ textAlign: "center", color: '#86cb6a' ,margin:"0",backgroundColor: "#f1f1f1",padding:"0.5%"}}>Video Call</h1>
+			<h1 className="title-video" style={{ textAlign: "center", color: '#52585c' ,margin:"0",backgroundColor: "#f1f1f1",padding:"0.5%"}}>Video Call</h1>
 			<div className="video-body">
 		<div className="container">
 			<div className="video-container">
 				<div className="video">
-					{stream &&  <video playsInline muted ref={myVideo} autoPlay style={{ width: "180px" }} />}
+					{stream &&  <video playsInline muted ref={myVideo} autoPlay style={{ width: "200px" }} />}
 				</div>
 				<div className="video">
 					{callAccepted && !callEnded ?
@@ -119,7 +119,8 @@ const Video=()=> {
 					onChange={(e) => setName(e.target.value)}
 					style={{ marginBottom: "20px" }}
 				/> */}
-				<CopyToClipboard text={me} style={{ marginBottom: "0.5rem",width:"150px" ,height:"50px",backgroundColor:"#9bdb82" }}>
+				<div className="call-button">
+				<CopyToClipboard text={me} style={{ marginBottom: "0.5rem",width:"210px" ,height:"50px",backgroundColor:"#9bdb82" }}>
 					<Button variant="contained" color="primary" startIcon={<AssignmentIcon fontSize="large" />}>
 						Copy ID
 					</Button>
@@ -132,9 +133,9 @@ const Video=()=> {
 					value={idToCall}
 					onChange={(e) => setIdToCall(e.target.value)}
 				/>
-				<div className="call-button">
+				
 					{callAccepted && !callEnded ? (
-						<Button variant="contained" color="secondary"  onClick={leaveCall}>
+						<Button variant="contained" color="secondary" width="100px" onClick={leaveCall}>
 							End Call
 						</Button>
 					) : (
@@ -145,18 +146,19 @@ const Video=()=> {
 					
 				</div>
 			</div>     
-			<div>
+			
+		</div>
+		</div>
+		<div className="have-Call">
 				{receivingCall && !callAccepted ? (
 						<div className="caller">
 						<h1 > you have a call...</h1>
-						<Button variant="contained" color="primary" onClick={answerCall}>
+						<Button variant="contained"  onClick={answerCall}>
 							Answer
 						</Button>
 					</div>
 				) : null}
 			</div>
-		</div>
-		</div>
 		</div>
 		</>
 	)

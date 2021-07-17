@@ -140,16 +140,18 @@
 .container{
  
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   text-align: center;
+  gap:5%;
+  margin-top: 20px;
 }  
   
 .video-body{
   
   background-color: #f1f1f1;
-  padding-bottom: 12.4%;
+  padding-bottom: 11.4%;
   margin: 0px auto;
   
 }   
@@ -160,4 +162,25 @@
   align-items: center;
   text-align: center;
   gap: 15px;
+  margin-top: 15px;
+  
+}
+.myId .call-button{
+  display: flex;
+  flex-direction: column;
+  margin: 4.5rem;
+}
+.video-container{
+  display: flex;
+  flex-direction: column;
+ 
+}
+.have-Call{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+}
+.have-Call Button{
+  background-color:#9bdb82;
 }
